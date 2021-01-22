@@ -97,9 +97,9 @@ $ python -m pip install -r requirements.txt.
 $ python main.py
 ```
 ### dataset.txt: 
->Data csv file to train the model. Dataset name is, Sentiment140 dataset with 1.6 million tweets and it contains 1,600,000 tweets extracted using the twitter api . The tweets have been annotated (0 = negative, 4 = positive) and they can be used to detect sentiment. Link for the dataset: https://www.kaggle.com/kazanova/sentiment140
-### GloVe Embedding Stanford AI files:
->We used GloVe Vectors from Stanford University as word embedding model in this project. We downloaded the files and unzip them, and put the files to a directory called "GloVe Embedding Stanford AI" in the project files and used
+>Txt file that contains the link to dataset to train the model. Dataset name is, Sentiment140 dataset with 1.6 million tweets and it contains 1,600,000 tweets extracted using the twitter api . The tweets have been annotated (0 = negative, 4 = positive) and they can be used to detect sentiment. Link for the dataset: https://www.kaggle.com/kazanova/sentiment140
+### word embedding.txt:
+>We used GloVe Vectors from Stanford University as word embedding model in this project. We downloaded the files and unzip them, and used
 "glove.6B.300d.txt" file for word embedding task. You can find the link here: http://nlp.stanford.edu/data/glove.6B.zip
 
 ### Report files:
