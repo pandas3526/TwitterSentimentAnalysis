@@ -37,9 +37,9 @@ df.columns = ['sentiment', 'id', 'date', 'query', 'user_id', 'text']
 
 df = df.drop(['id', 'date', 'query', 'user_id'], axis=1)
 
-#In the sentiment column, there are 3 values, 0 indicating that the sentiment is negative,2 indicating that the sentiment is neutral, 4 indicates that sentiment is positive. That's why we change the values(0,4) to (Negative, Positive)
+#In the sentiment column, there are 2 values, 0 indicating that the sentiment is negative and 4 indicates that sentiment is positive. That's why we change the values(0,4) to (Negative, Positive)
 
-lab_to_sentiment = {0:"Negative", 4:"Positive"}
+lab_to_sentiment = {0:"Negative", 2:"Neutral" 4:"Positive"}
 def label_decoder(label):
   return lab_to_sentiment[label]
 df.sentiment = df.sentiment.apply(lambda x: label_decoder(x))
@@ -166,6 +166,8 @@ embedding_layer = tf.keras.layers.Embedding(vocab_size,
                                           input_length=MAX_SEQUENCE_LENGTH,
                                           trainable=False) 
 print("Word embedding completed...")
+
+
 """Now we will implement our model with our findings above. In our data there are some words feature in both Positive and Negative tweets,
     This could be a problem in our learning model. That's why we use Sequence Models. For model architecture, we use
 	Embedding Layer - Generates Embedding Vector for each input sequence.
@@ -177,6 +179,7 @@ print("Word embedding completed...")
 
 from tensorflow.keras.layers import Conv1D, Bidirectional, LSTM, Dense, Input, Dropout
 from tensorflow.keras.layers import SpatialDropout1D
+from tensorflow.keras.callbacks import ModelCheckpoint
 
 #Building Sequence Models
 
@@ -264,7 +267,6 @@ al.set_title('model loss')
 al.set_ylabel('loss')
 al.set_xlabel('epoch')
 al.legend(['train', 'val'], loc = 'upper left')
-plt.close()
 
 ####################Model Testing####################
 """In this part, To test accuracy of our model, we will send some sentences as user input to our trained model for testing."""
@@ -308,5 +310,3 @@ def start_program():
 start_program()      
 
       
-
-
