@@ -1,1 +1,1 @@
-https://www.kaggle.com/kazanova/sentiment140/metadata
+https://www.kaggle.com/kazanova/sentiment140
