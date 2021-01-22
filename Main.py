@@ -39,7 +39,7 @@ df = df.drop(['id', 'date', 'query', 'user_id'], axis=1)
 
 #In the sentiment column, there are 2 values, 0 indicating that the sentiment is negative and 4 indicates that sentiment is positive. That's why we change the values(0,4) to (Negative, Positive)
 
-lab_to_sentiment = {0:"Negative", 2:"Neutral" 4:"Positive"}
+lab_to_sentiment = {0:"Negative",4:"Positive"}
 def label_decoder(label):
   return lab_to_sentiment[label]
 df.sentiment = df.sentiment.apply(lambda x: label_decoder(x))
