@@ -43,7 +43,7 @@ Data preprocessing is a proven method of resolving such issues. Data preprocessi
 # 3-)Tokenization
 >To understand the text data better, we should do the mapping by indexing every words used in tweets. To do that, we will use a method called "tokenization". tokenization is the task of chopping it up into pieces, called tokens, perhaps at the same time throwing away certain characters, such as punctuation. After that, we will use that object to convert any word into a "key" in dictionary. Since we are going to build a sequence model, we should be sure that there is no variance in input shapes It all should be of same length. But texts in tweets have different count of words in it. To avoid this, we will make all the sequence in one constant length using pad_sequences from keras library. Since we are building the model to predict class in enocoded form as binary classification. We should encode our training labels to encodings. To do that we will use label encoding.
 # 4-)Word Embeding
->A word embedding is a learned representation for text where words that have the same meaning have a similar representation so we used word embedding to capture context of a word in a document, semantic and syntactic similarity,  relation with other words, etc. There are many ways to do word embedding. Pretrained models can be used for such a project, such as  Word2vec, GloVe Vectors, fastText, We used GloVe Vectors from Stanford University in this project. We downloaded the files and unzip them, and put the files to a directory called "GloVe Embedding Stanford AI" in the project files and used"glove.6B.300d.txt" file for word embedding task. You can find the link here: http://nlp.stanford.edu/data/glove.6B.zip
+>A word embedding is a learned representation for text where words that have the same meaning have a similar representation so we used word embedding to capture context of a word in a document, semantic and syntactic similarity,  relation with other words, etc. There are many ways to do word embedding. Pretrained models can be used for such a project, such as  Word2vec, GloVe Vectors, fastText, We used GloVe Vectors from Stanford University in this project. We downloaded the files and unzip them  and used"glove.6B.300d.txt" file for word embedding task. You can find the link here: http://nlp.stanford.edu/data/glove.6B.zip or in word embedding.txt file in our repository
 # 5-)Model Training
 >In our data there are some words feature in both Positive and Negative tweets,This could be a problem in our learning model. That's why we use Sequence Models. For model architecture, we use:
 	Embedding Layer - Generates Embedding Vector for each input sequence.
@@ -81,12 +81,8 @@ Twitter Sentiment Analysis
 │   README.md
 │   requirement.txt 
 │   main.py 
-│   Sentiment Analysis data .csv
-└───GloVe Embedding Stanford AI
-    │   glove.6B.50d.txt
-    │   glove.6B.100d.txt
-    │   glove.6B.200d.txt
-    │   glove.6B.300d.txt
+│   dataset.txt
+│   word embedding.txt
 └───Report
     
 ```
@@ -100,7 +96,7 @@ $ python -m pip install -r requirements.txt.
 ```sh
 $ python main.py
 ```
-### Sentiment Analysis data .csv: 
+### dataset.txt: 
 >Data csv file to train the model. Dataset name is, Sentiment140 dataset with 1.6 million tweets and it contains 1,600,000 tweets extracted using the twitter api . The tweets have been annotated (0 = negative, 4 = positive) and they can be used to detect sentiment. Link for the dataset: https://www.kaggle.com/kazanova/sentiment140
 ### GloVe Embedding Stanford AI files:
 >We used GloVe Vectors from Stanford University as word embedding model in this project. We downloaded the files and unzip them, and put the files to a directory called "GloVe Embedding Stanford AI" in the project files and used
