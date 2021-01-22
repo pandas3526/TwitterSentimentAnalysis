@@ -1,0 +1,20 @@
+Word embedding is a learned representation for text where words that have the same meaning have a similar representation so we used word embedding to capture context of a word in a document, semantic and syntactic similarity, relation with other words, etc. There are many ways to do word embedding. Pretrained models can be used for such a project, such as Word2vec, GloVe Vectors, fastText, We used GloVe Vectors from Stanford University in this project. We downloaded the files and unzip them, and put the files to a directory called "GloVe Embedding Stanford AI" in the project files and used"glove.6B.300d.txt" file for word embedding task. You can find the link here: http://nlp.stanford.edu/data/glove.6B.zip
+
+Using pretrained GloVe model we created embedding layer with the code below:
+
+\begin{lstlisting}[
+                   language = python,
+                   xleftmargin = 0.1cm,
+                   framexleftmargin = 1em]
+embedding_matrix = np.zeros((vocab_size, EMBEDDING_DIM))
+for word, i in word_index.items():
+  embedding_vector = embeddings_index.get(word)
+  if embedding_vector is not None:
+    embedding_matrix[i] = embedding_vector
+embedding_layer = tf.keras.layers.Embedding(vocab_size,
+                                          EMBEDDING_DIM,
+                                          weights=[embedding_matrix],
+                                          input_length=MAX_SEQUENCE_LENGTH,
+                                          trainable=False)
+ \end{lstlisting}
+                                         

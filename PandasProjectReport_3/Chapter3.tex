@@ -1,0 +1,27 @@
+To preprocess your text simply means to bring your text into a form that is predictable and analyzable for your task.Therefore, we do text preprocessing by removing unnecessary characters so that the tweets contained in the data can be analyzed clearly.Text Preporcessing was implemented in two steps in this project(Stop Word Filtering, Stemming). We will use Stemming/ Lematization to preprocess the data first, to do that we will use stop word filtering, we will use NLTK, a python library that has functions to perform text processing task.
+
+For Text Preprocessing we did the following below:
+Using NLTK library, we imported stop words and stemmer object.
+\begin{lstlisting}[
+                   language = python,
+                   xleftmargin = 0.1cm,
+                   framexleftmargin = 1em]
+stop_words = stopwords.words('english') 
+stemmer = SnowballStemmer('english') 
+\end{lstlisting}
+And finally, preprocess our text data with the function below:
+\begin{lstlisting}[
+                   language = python,
+                   xleftmargin = 0.1cm,
+                   framexleftmargin = 1em]
+def preprocess(text, stem=False):
+  text = re.sub(text_cleaning_re, ' ', str(text).lower()).strip()   
+  tokens = []
+  for token in text.split():
+    if token not in stop_words:   
+      if stem:
+        tokens.append(stemmer.stem(token))
+      else:
+        tokens.append(token)
+  return " ".join(tokens)
+\end{lstlisting}

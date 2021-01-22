@@ -1,0 +1,37 @@
+To understand the text data better, we should do the mapping by indexing every words used in tweets. To do that, we will
+use a method called "tokenization". tokenization is the task of chopping it up into pieces, called tokens, perhaps at the same time throwing away certain characters, such as punctuation.
+
+
+\begin{lstlisting}[
+                   language = python,
+                   xleftmargin = 0.1cm,
+                   framexleftmargin = 1em],
+tokenizer = Tokenizer() #It create tokens for every word in the data and map them to a index using dictionary.
+tokenizer.fit_on_texts(train_data.text)#fitting the model
+\end{lstlisting}
+
+
+\begin{lstlisting}[
+                   language = python,
+                   xleftmargin = 0.1cm,
+                   framexleftmargin = 1em],
+word_index = tokenizer.word_index#It contains the index for each word
+vocab_size = len(tokenizer.word_index) + 1#It represents the total number of word in the data
+\end{lstlisting}
+
+Now we have the tokenizer, we will use that object to convert any word into a "key" in dictionary. 
+Since we are going to build a sequence model, we should be sure that there is no variance in input shapes
+It all should be of same length. But texts in tweets have different count of words in it. 
+To avoid this, we will make all the sequence in one constant length using PadSequences from keras library.
+
+
+\begin{lstlisting}[
+                   language = python,
+                   xleftmargin = 0.1cm,
+                   framexleftmargin = 1em],
+x_train = pad_sequences(tokenizer.texts_to_sequences(train_data.text), 
+                        maxlen = MAX_SEQUENCE_LENGTH)
+x_test = pad_sequences(tokenizer.texts_to_sequences(test_data.text),
+                       maxlen = MAX_SEQUENCE_LENGTH)
+
+\end{lstlisting}

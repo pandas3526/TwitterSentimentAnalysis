@@ -1,0 +1,22 @@
+In our data there are some words feature in both Positive and Negative tweets,This could be a problem in our learning model. That's why we use Sequence Models. For model architecture, we use: Embedding Layer, Conv1D Layer,  LSTM - Long Short Term Memory, Dense. Now we will implement Optimization Algorithm with callbacks and start training. For optimization algorithm we will use Adam. We will use 2 callbacks. Callbacks are special functions which are called at the end of an epoch. 
+With the code below, we created and fitted our model to start training:
+\begin{lstlisting}[
+                   language = python,
+                   xleftmargin = 0.1cm,
+                   framexleftmargin = 1em]
+x = SpatialDropout1D(0.2)(embedding_sequences) #it drops entire 1D feature maps
+
+x = Conv1D(64, 5, activation='relu')(x) #to convolve data into smaller feature vectors.
+
+x = Bidirectional(LSTM(64, dropout=0.2, recurrent_dropout=0.2))(x) #we will use bidirectional LSTM to implement our model
+
+x = Dense(512, activation='relu')(x) #by adding dense layer, we feed all outputs from the previous layer to all its neurons, each neuron providing one output to the next layer. (This is enterance dense layer)
+
+x = Dropout(0.5)(x) #to prevent overfitting we use dropout layer(it sets input units to 0 with a frequency of rate at each step during training time)
+			#dropout layer can only be used on fully connected layers, it prevents overfitting by deactivating some neurons, Fine Tuning
+
+x = Dense(512, activation='relu')(x) #(This is exit dense layer)
+outputs = Dense(1, activation='sigmoid')(x) #final outputs
+model = tf.keras.Model(sequence_input, outputs) #fitting model
+ \end{lstlisting}
+                           

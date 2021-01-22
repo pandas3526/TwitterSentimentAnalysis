@@ -1,0 +1,139 @@
+\documentclass[12pt]{report}
+\usepackage{graphicx}
+\usepackage{tabu}
+\usepackage{geometry}
+\usepackage{minitoc}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[noend]{algpseudocode}
+\usepackage[sorting=none]{biblatex}
+\addbibresource{reference.bib}
+
+\usepackage{amssymb}
+\usepackage{dirtytalk}
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=0mm}
+\setlist[itemize]{itemsep=0mm}
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
+
+
+%multiple columns can be created 
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\usepackage{sectsty}
+\chapterfont{\centering}
+\geometry{a4paper, tmargin=1in, rmargin=1in, bmargin=1in, lmargin=1in}
+
+
+\usepackage{cryptocode}
+
+
+
+% sets roll number , name and title
+\newcommand{\rollno}{roll number}
+\newcommand{\name}{name}
+\newcommand{\topic}{Twitter Sentiment Analysis}
+\newcommand{\guide}{guide name}
+\newcommand{\hod}{HOD name}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[RE,LO]{\topic}
+\fancyfoot[RE,LO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\renewcommand*\contentsname{\hfill\textbf{\textbf{\fontsize{16pt}{24pt}\selectfont TABLE OF CONTENTS}} \hfill}
+\renewcommand{\bibname}{REFERENCES}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+\include{mytitle}
+
+\pagenumbering{gobble}
+\include{bonafide}
+\include{acknowledgement}
+
+
+
+\pagenumbering{roman}
+
+
+\tableofcontents
+
+
+
+
+
+\chapter{ Introduction} \label{ch:intro}
+\pagenumbering{arabic}
+\input{Introduction}
+\chapter{ Sentiment Analysis} \label{ch:background}
+\input{Sentiment Analysis}
+
+\chapter{ Data Preprocessing} \label{ch:background}
+\input{Chapter2}
+
+\chapter{Text Preprocessing} \label{ch:literature_review}
+\input{Chapter3}
+
+
+\chapter{Tokenization} \label{ch:main_chapter1}
+\input{Chapter4}
+
+\chapter{Word Embedding} \label{ch:main_chapter2}
+\input{Chapter5}
+
+\chapter{Model Training} \label{ch:proposal}
+\input{Chapter6}
+
+\chapter{Model Evaluation} \label{ch:experimental_results}
+\input{Chapter7}
+
+\chapter{Model Testing} \label{ch:conclusion}
+\input{Test}
+\chapter{Result} \label{ch:main_chapter1}
+\input{Result}
+
+\printbibliography
+
+
+
+\end{document}          
