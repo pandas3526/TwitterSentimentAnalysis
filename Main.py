@@ -22,7 +22,7 @@ import re
 
 #Loading sentiment analysis data:
 
-df = pd.read_csv('Sentiment Analysis data .csv',
+df = pd.read_csv('training.1600000.processed.noemoticon.csv',
                  encoding = 'latin',header=None)
 ####################Data Preprocessing####################
 """To start exploring and evaulating our model we should start with data preprocessing. Data preprocessing arranges the data 
@@ -139,7 +139,7 @@ the files and unzip them, and put the files to a directory called "GloVe Embeddi
 "glove.6B.300d.txt" file for word embedding task. You can find the link here: http://nlp.stanford.edu/data/glove.6B.zip
 """
 
-GLOVE_EMB = "GloVe Embedding Stanford AI\glove.6B.300d.txt" #the path of the txt file
+GLOVE_EMB = "glove.6B.300d.txt" #the path of the txt file
 EMBEDDING_DIM = 300 #embedding dimension 
 LR = 1e-3
 BATCH_SIZE = 1024
