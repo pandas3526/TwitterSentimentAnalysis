@@ -91,10 +91,10 @@ Twitter Sentiment Analysis
 ```sh
 $ python -m pip install -r requirements.txt.
 ```
-### main. py: 
+### Main. py: 
 >Main file of the project, It envolves all parts, Data preprocessing to Model Testing. To run the main file you should run following command:
 ```sh
-$ python main.py
+$ python Main.py
 ```
 ### dataset.txt: 
 >Txt file that contains the link to dataset to train the model. Dataset name is, Sentiment140 dataset with 1.6 million tweets and it contains 1,600,000 tweets extracted using the twitter api . The tweets have been annotated (0 = negative, 4 = positive) and they can be used to detect sentiment. Link for the dataset: https://www.kaggle.com/kazanova/sentiment140
@@ -108,7 +108,7 @@ $ python main.py
 ### Language, version, and main file
 >Language: Python
 Version: 3.8.3
-Main file: main.py
+Main file: Main.py
 
 
 
