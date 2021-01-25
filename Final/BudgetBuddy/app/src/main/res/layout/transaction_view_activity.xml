@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:stretchColumns="1">
+
+                <!-- Name -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#000000">
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="start" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:background="#D6CECE"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/drop_shadow"
+                            android:labelFor="@+id/name"
+                            android:padding="@dimen/inputPadding"
+                            android:text="@string/name"
+                            android:textColor="#FF9800"
+                            android:textSize="@dimen/inputSize"
+                            app:fontFamily="@font/kalam" />
+
+                        <EditText
+                            android:id="@+id/nameEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FAF5F5"
+                            android:inputType="textCapWords"
+                            android:padding="@dimen/inputPadding"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:id="@+id/nameView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/inputPadding"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/inputSize" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="end" />
+                </TableRow>
+
+                <!-- Budget -->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#000000">
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="start" />
+
+                    <LinearLayout
+                        android:layout_width="204dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:background="#FAF7F7"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/drop_shadow"
+                            android:labelFor="@+id/budgetSpinner"
+                            android:padding="@dimen/inputPadding"
+                            android:text="@string/budget"
+                            android:textColor="#FF9800"
+                            android:textSize="@dimen/inputSize"
+                            app:fontFamily="@font/kalam" />
+
+                        <Spinner
+                            android:id="@+id/budgetSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FAF8F8"
+                            android:drawSelectorOnTop="true"
+                            android:paddingStart="@dimen/inputPadding"
+                            android:paddingLeft="@dimen/inputPadding"
+                            android:paddingEnd="@dimen/inputPadding"
+                            android:paddingRight="@dimen/inputPadding"
+                            android:scrollbarThumbHorizontal="@color/inputBackground"
+                            android:scrollbarThumbVertical="@drawable/customprogressbar"
+                            android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:id="@+id/budgetView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/inputPadding"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/inputSize" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="end" />
+                </TableRow>
+
+                <!-- Account -->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/inputBackground"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="start" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/account"
+                            android:padding="@dimen/inputPadding"
+                            android:text="@string/account"
+                            android:textSize="@dimen/inputSize" />
+
+                        <EditText
+                            android:id="@+id/accountEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:padding="@dimen/inputPadding"
+                            android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:id="@+id/accountView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/inputPadding"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/inputSize" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="end" />
+                </TableRow>
+
+                <!-- Value -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/inputBackground">
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="start" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:background="#D6CECE"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/drop_shadow"
+                            android:labelFor="@+id/value"
+                            android:padding="@dimen/inputPadding"
+                            android:text="@string/value"
+                            android:textColor="#FF9800"
+                            android:textSize="@dimen/inputSize"
+                            app:fontFamily="@font/kalam" />
+
+                        <EditText
+                            android:id="@+id/valueEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FAF5F5"
+                            android:inputType="numberDecimal"
+                            android:padding="@dimen/inputPadding"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:id="@+id/valueView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/inputPadding"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/inputSize" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="end" />
+                </TableRow>
+
+                <!-- Note -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/inputBackground">
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="start" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:background="#FAF6F6"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/drop_shadow"
+                            android:labelFor="@+id/note"
+                            android:padding="@dimen/inputPadding"
+                            android:text="@string/note"
+                            android:textColor="#FF9800"
+                            android:textSize="@dimen/inputSize"
+                            app:fontFamily="@font/kalam" />
+
+                        <EditText
+                            android:id="@+id/noteEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:inputType="textCapWords"
+                            android:padding="@dimen/inputPadding"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:id="@+id/noteView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/inputPadding"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/inputSize" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="end" />
+                </TableRow>
+
+                <!-- Date -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/inputBackground">
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="start" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:background="#D6CECE"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/drop_shadow"
+                            android:labelFor="@+id/date"
+                            android:padding="@dimen/inputPadding"
+                            android:text="@string/date"
+                            android:textColor="#FF9800"
+                            android:textSize="@dimen/inputSize"
+                            app:fontFamily="@font/kalam" />
+
+                        <EditText
+                            android:id="@+id/dateEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FAF5F5"
+                            android:inputType="date"
+                            android:padding="@dimen/inputPadding"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/inputSize" />
+
+                        <TextView
+                            android:id="@+id/dateView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/inputPadding"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/inputSize" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/inputBorderThickness"
+                        android:layout_height="match_parent"
+                        android:background="@color/inputBorder"
+                        android:gravity="end" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <!-- Capture button(s) -->
+
+
+                <View
+                    android:id="@+id/endingDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputBorderThickness"
+                    android:background="@color/inputBorder" />
+
+                <!-- Ending spacer -->
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/inputContrastBackground">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dip" />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

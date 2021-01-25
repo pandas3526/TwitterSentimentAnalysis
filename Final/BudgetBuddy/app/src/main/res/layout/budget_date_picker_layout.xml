@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:labelFor="@+id/startDate"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip"
+                android:text="@string/startDate"
+                android:textSize="20.0sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/kalam" />
+
+            <DatePicker
+                android:id="@+id/startDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:calendarViewShown="false"
+                android:spinnersShown="true"></DatePicker>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:labelFor="@+id/endDate"
+                android:paddingStart="20.0dip"
+                android:paddingEnd="20.0dip"
+                android:text="@string/endDate"
+                android:textSize="20.0sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/kalam" />
+
+            <DatePicker
+                android:id="@+id/endDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FAFAFA"
+                android:calendarViewShown="false"
+                android:spinnersShown="true"></DatePicker>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+

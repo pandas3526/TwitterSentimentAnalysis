@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/drop_shadow"
+    android:orientation="vertical"
+    android:padding="5.0dp"
+    android:paddingStart="15dp"
+
+    android:paddingEnd="15dp">
+
+    <TextView
+        android:id="@+id/budgetName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF9800"
+        android:textSize="20.0sp"
+        app:fontFamily="@font/kalam" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+        android:baselineAligned="true"
+        android:orientation="horizontal"
+        android:padding="5.0dp">
+
+        <ProgressBar
+            android:id="@+id/budgetBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+
+            android:background="@color/grey"
+            android:progressDrawable="@drawable/customprogressbar" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:baselineAligned="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/budgetValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="#FF9800"
+                app:fontFamily="@font/kalam" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
